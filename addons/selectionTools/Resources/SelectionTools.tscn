@@ -1,0 +1,288 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://addons/selectionTools/Resources/SelectionTools.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.1971, 0.21897, 0.27, 1 )
+border_color = Color( 0.3053, 0.338553, 0.43, 1 )
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 2
+shadow_color = Color( 0, 0, 0, 0.172549 )
+shadow_size = 4
+shadow_offset = Vector2( 2, 2 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.1104, 0.126107, 0.16, 1 )
+border_color = Color( 0.3053, 0.338553, 0.43, 1 )
+border_blend = true
+corner_radius_top_left = 1
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 25.0
+bg_color = Color( 1, 1, 1, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.239216, 0.254902, 0.392157, 1 )
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+
+[node name="SelectionTools" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 21.0
+rect_pivot_offset = Vector2( 512, 0 )
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectall" type="Button" parent="Panel"]
+anchor_left = 0.00976563
+anchor_top = 0.0915371
+anchor_right = 0.166016
+anchor_bottom = 0.259067
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Select All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deselectall" type="Button" parent="Panel"]
+anchor_left = 0.166016
+anchor_top = 0.090836
+anchor_right = 0.322266
+anchor_bottom = 0.258024
+margin_left = 5.0
+margin_right = 5.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Deselect All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="deselectchildren" type="Button" parent="Panel"]
+anchor_left = 0.536133
+anchor_top = 0.090836
+anchor_right = 0.692383
+anchor_bottom = 0.258024
+margin_left = 3.0
+margin_right = 3.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Deselect Children"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectInvert" type="Button" parent="Panel"]
+anchor_left = 0.740234
+anchor_top = 0.0915371
+anchor_right = 0.975586
+anchor_bottom = 0.259067
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Invert Selection"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="selectchildren" type="Button" parent="Panel"]
+anchor_left = 0.378013
+anchor_top = 0.0915371
+anchor_right = 0.534263
+anchor_bottom = 0.258725
+margin_bottom = 1.52588e-05
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Select Children"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="namesearch" type="LineEdit" parent="Panel"]
+anchor_left = 0.00976563
+anchor_top = 0.414508
+anchor_right = 0.322266
+anchor_bottom = 0.647668
+margin_top = -16.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 122, 0 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="typesearch" type="LineEdit" parent="Panel"]
+anchor_left = 0.37793
+anchor_top = 0.414508
+anchor_right = 0.692383
+anchor_bottom = 0.647668
+margin_top = -16.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 122, 0 )
+custom_styles/read_only = SubResource( 3 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="namefind" type="Button" parent="Panel"]
+anchor_left = 0.00976563
+anchor_top = 0.667648
+anchor_right = 0.166016
+anchor_bottom = 0.834837
+margin_left = -9.53674e-07
+margin_top = -16.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Select by Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="classfind" type="Button" parent="Panel"]
+anchor_left = 0.378013
+anchor_top = 0.667648
+anchor_right = 0.534263
+anchor_bottom = 0.834837
+margin_top = -16.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Select by Class"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="namefind2" type="Button" parent="Panel"]
+anchor_left = 0.166016
+anchor_top = 0.667648
+anchor_right = 0.322266
+anchor_bottom = 0.834837
+margin_left = 5.0
+margin_top = -16.0
+margin_right = 5.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Deselect by Name"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="classfind2" type="Button" parent="Panel"]
+anchor_left = 0.536133
+anchor_top = 0.667648
+anchor_right = 0.692383
+anchor_bottom = 0.834837
+margin_left = 3.0
+margin_top = -16.0
+margin_right = 3.0
+margin_bottom = -16.0
+rect_pivot_offset = Vector2( 91, 0 )
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 1 )
+custom_styles/disabled = SubResource( 1 )
+custom_styles/normal = SubResource( 1 )
+text = "Deselect by Class"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnlyChildren" type="CheckButton" parent="Panel"]
+anchor_top = 0.824534
+anchor_right = 0.0742188
+anchor_bottom = 0.893619
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OnlyChildrenText" type="Label" parent="Panel"]
+anchor_left = 0.0742188
+anchor_top = 0.818653
+anchor_right = 0.197266
+anchor_bottom = 0.88601
+margin_top = 3.05176e-05
+text = "Only From Selected (including their children)"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+margin_left = 10.0
+margin_top = -4.0
+margin_right = 107.0
+margin_bottom = 10.0
+text = "Selection Tools"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Panel/selectall" to="." method="_on_selectall_pressed"]
+[connection signal="pressed" from="Panel/deselectall" to="." method="_on_deselectall_pressed"]
+[connection signal="pressed" from="Panel/deselectchildren" to="." method="_on_deselectchildren_pressed"]
+[connection signal="pressed" from="Panel/selectInvert" to="." method="_on_selectInvert_pressed"]
+[connection signal="pressed" from="Panel/selectchildren" to="." method="_on_selectchildren_pressed"]
+[connection signal="pressed" from="Panel/namefind" to="." method="_on_namefind_pressed"]
+[connection signal="pressed" from="Panel/classfind" to="." method="_on_classfind_pressed"]
+[connection signal="pressed" from="Panel/namefind2" to="." method="_on_namefind2_pressed"]
+[connection signal="pressed" from="Panel/classfind2" to="." method="_on_classfind2_pressed"]
